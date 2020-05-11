@@ -11,13 +11,5 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
-
-Route::get('/about', function () {
-	$data = [
-		'name' => 'Sunu Aziz'
-	];
-    return view('about', $data);
-});
+Route::get('/', 'PagesController@home');
+Route::get('/about', 'PagesController@about');
