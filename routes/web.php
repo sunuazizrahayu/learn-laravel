@@ -28,3 +28,6 @@ Route::get('/students/{student}/edit', 'StudentsController@edit');
 Route::patch('/students/{student}', 'StudentsController@update');
 */
 Route::resource('students', 'StudentsController');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
