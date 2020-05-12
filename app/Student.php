@@ -6,6 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Student extends Model
 {
-    //
-    // protected $table = 'mahasiswa';
+    protected $fillable = ['nama','nrp','email','jurusan']; //field yang boleh diisi
+    // protected $guarded = ['id']; //field yang tidak boleh diisi
 }
