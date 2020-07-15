@@ -13,7 +13,11 @@ composer create-project --prefer-dist laravel/laravel your-project-name 5.8
 
 ### Controller with CRUD function
 ```
+# cara 1
 php artisan make:controller YourController --resource
+
+# cara 2
+php artisan make:controller YourController -r
 ```
 index(): untuk menampilkan semua data / halaman awal    
 create(): untuk menampilkan form create   
