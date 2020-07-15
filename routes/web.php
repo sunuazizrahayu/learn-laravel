@@ -18,3 +18,5 @@ Route::get('/', function () {
 });
 
 Route::view('/blank', 'layouts.app.blank_page');
+
+Route::get('/mahasiswa_builder', 'MahasiswaBuilderController@index');
