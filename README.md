@@ -1,6 +1,6 @@
 # learn-laravel
 
-### Create Project
+### Buat Project
 With latest version
 ```
 laravel new your-project-name
@@ -11,7 +11,7 @@ composer create-project --prefer-dist laravel/laravel your-project-name 5.8
 ```
 
 
-### Controller with CRUD function
+### Buat Controller dengan CRUD function
 ```
 # cara 1
 php artisan make:controller YourController --resource
@@ -26,3 +26,8 @@ show(): untuk melihat satu data
 edit(): menampilkan form edit  
 update(): proses untuk update data  
 destroy(): proses untuk hapus data  
+
+### Buat Controller dengan CRUD function sekaligus Model
+```
+php artisan make:controller YourController -r -m YourModel
+```
