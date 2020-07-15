@@ -9,3 +9,9 @@ Specific laravel version with composer
 ```
 composer create-project --prefer-dist laravel/laravel your-project-name 5.8
 ```
+
+
+### Controller with CRUD function
+```
+php artisan make:controller YourController --resource
+```
