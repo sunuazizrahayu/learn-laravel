@@ -26,8 +26,15 @@ show(): untuk melihat satu data
 edit(): menampilkan form edit  
 update(): proses untuk update data  
 destroy(): proses untuk hapus data  
+```
+# contoh:
+php artisan make:controller StudentsController -r
+```
 
 ### Buat Controller dengan CRUD function sekaligus Model
 ```
 php artisan make:controller YourController -r -m YourModel
+
+#contoh :
+php artisan make:controller StudentsController -r -m Student
 ```
