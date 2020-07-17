@@ -20,3 +20,11 @@ Route::get('/', function () {
 Route::view('/blank', 'layouts.app.blank_page');
 
 Route::get('/mahasiswa_builder', 'MahasiswaBuilderController@index');
+Route::get('/mahasiswa_eloquent', 'MahasiswaEloquentController@index');
+
+Route::get('/students_builder', 'StudentsBuilderController@index');
+
+
+# students
+Route::get('/students', 'StudentsController@index');
+Route::get('/students/{student}', 'StudentsController@show');

@@ -5,7 +5,7 @@
 @section('content')
 <!-- Content Header (Page header) -->
 <section class="content-header">
-	<h1>Mahasiswa</h1>
+	<h1>Students</h1>
 </section>
 
 <!-- Main content -->
@@ -26,7 +26,7 @@
 								<th>NRP</th>
 								<th>Email</th>
 								<th>Jurusan</th>
-								<th width="10px">Aksi</th>
+								<th width="80px">Aksi</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -38,8 +38,9 @@
 								<td>{{ $mhs->email }}</td>
 								<td>{{ $mhs->jurusan}} </td>
 								<td>
-									<button class="btn btn-warning btn-xs"><i class="fa fa-pencil"></i></button>
-									<button class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></button>
+									<a href="{{ url('/students/'. $mhs->id ) }}" class="btn btn-info btn-xs">Detail</a>
+									<a href="{{ url('/students/'. $mhs->id ) }}" class="btn btn-warning btn-xs" title="Edit"><i class="fa fa-pencil"></i></a>
+									<a href="{{ url('/students/'. $mhs->id ) }}" class="btn btn-danger btn-xs" title="Delete"><i class="fa fa-trash"></i></a>
 								</td>
 							</tr>	
 							@endforeach
