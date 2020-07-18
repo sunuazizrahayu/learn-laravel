@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Student;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class StudentsController extends Controller
 {
@@ -39,13 +40,25 @@ class StudentsController extends Controller
      */
     public function store(Request $request)
     {
-        //validasi
-        $request->validate([
+        //validasi v1
+        // $request->validate([
+        //     'nama' => 'required|max:255',
+        //     'nrp' => 'required|size:9',
+        //     'email' => 'required|email',
+        //     'jurusan' => 'required'
+        // ]);
+
+        //validasi v2
+        $rules = [
             'nama' => 'required|max:255',
             'nrp' => 'required|size:9',
             'email' => 'required|email',
             'jurusan' => 'required'
-        ]);
+        ];
+        $attrs = [
+            'nama' => 'name'
+        ];
+        Validator::make($request->all(), $rules, [], $attrs)->validate();
 
 
         //proses simpan
