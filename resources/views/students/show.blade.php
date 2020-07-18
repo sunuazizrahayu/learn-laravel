@@ -51,9 +51,13 @@
 						<a href="{{url('students')}}"><button class="btn btn-default">Kembali</button></a>
 
 						<div class="pull-right">
-							<a href="{{url('students/edit/'.$student->id)}}" class="btn btn-warning">Edit</a>
+							<a href="{{url('students/'.$student->id.'/edit')}}" class="btn btn-warning">Edit</a>
 							&nbsp;
-							<a href="{{url('students/delete/'.$student->id)}}" class="btn btn-danger">Hapus</a>
+							<form action="{{ $student->id }}" style="display: inline;" method="post">
+								@method('delete')
+								@csrf
+								<button type="submit" class="btn btn-danger">Hapus</button>
+							</form>
 						</div>
 					</div>
 					<!-- /.box-footer -->
