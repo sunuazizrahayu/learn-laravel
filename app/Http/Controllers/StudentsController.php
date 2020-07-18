@@ -28,7 +28,7 @@ class StudentsController extends Controller
      */
     public function create()
     {
-        //
+        return view('students.create');
     }
 
     /**
@@ -39,7 +39,39 @@ class StudentsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //validasi
+        $request->validate([
+            'nama' => 'required|max:255',
+            'nrp' => 'required|size:9',
+        ]);
+
+
+        //proses simpan
+        //insert cara 1
+        // $student = new Student();
+        // $student->nama = $request->nama;
+        // $student->nrp = $request->nrp;
+        // $student->email = $request->email;
+        // $student->jurusan = $request->jurusan;
+        // $student->save();
+
+        //insert cara 2
+        //cara ini harus mendefinisikan fillable atau guarded di model
+        //buka model Mahasiswa untuk penjelasan lebih lengkap
+
+        //insert cara 2.A
+        // Student::create([
+        //     'nama' => $request->nama,
+        //     'nrp' => $request->nrp,
+        //     'email' => $request->email,
+        //     'jurusan' => $request->jurusan
+        // ]);
+
+        //insert cara 2.B
+        // all() pada code berikut hanya akan mengambil data yang ada didalam $fillable / diluar $guarded pada Model.
+        Student::create($request->all());
+
+        return redirect('students')->with('status', 'Data Mahasiswa Berhasil Ditambahkan!');
     }
 
     /**

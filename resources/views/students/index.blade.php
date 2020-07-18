@@ -12,9 +12,15 @@
 <section class="content">
 	<div class="row">
 		<div class="col-xs-12">
+			@if (session('status'))
+				<div class="alert alert-success">
+					{{ session('status') }}
+				</div>
+			@endif
 			<div class="box">
 				<div class="box-header">
 					<h3 class="box-title">Hover Data Table</h3>
+					<a href="{{url('students/create')}}"><div class="btn btn-primary btn-md pull-right">Create</div></a>
 				</div>
 				<!-- /.box-header -->
 				<div class="box-body">
