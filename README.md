@@ -38,3 +38,6 @@ php artisan make:controller YourController -r -m YourModel
 #contoh :
 php artisan make:controller StudentsController -r -m Student
 ```
+
+### Melihat semua routes
+php artisan route:list
