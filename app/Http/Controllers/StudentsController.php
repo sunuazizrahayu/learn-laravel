@@ -55,7 +55,9 @@ class StudentsController extends Controller
             'nrp' => 'required|size:9',
             'email' => 'required|email',
             'jurusan' => 'required'
-        ],[],[
+        ],[
+            'nama.required' => 'namaku hehe. :attribute as'
+        ],[
             //custom label
             'nama' => 'name'
         ]);
